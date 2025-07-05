@@ -1,0 +1,10 @@
+name: OverDurability
+version: '1.0.0-SNAPSHOT'
+main: studio.overmine.overdurability.OverDurability
+api-version: '1.13'
+author: Risas
+commands:
+  overdurability:
+    description: OverDurability Command
+    permission: overdurability.command.overdurability
+    aliases: [od, odurability]

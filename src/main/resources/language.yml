@@ -1,0 +1,17 @@
+durability-message:
+  help:
+    - "&7&m-------------------------"
+    - "&6&lOverDurability Commands"
+    - ""
+    - " &8● &f/%label% &7apply &8- &eApply durability to an item."
+    - " &8● &f/%label% &7reload &8- &eReload the plugin."
+    - "&7&m-------------------------"
+  error:
+    - "&cThere was an error while processing the item durability"
+    - "&cPossible reasons:"
+    - "&c- The item doesn't have lore."
+    - "&c- The item doesn't have the durability placeholder."
+    - ""
+    - "&cDurability placeholders: %od_durability%, %od_max_durability%"
+  no-item: "&cYou need to have an item in your hand to use this command."
+  applied: "&aDurability placeholder successfully applied to the item."
