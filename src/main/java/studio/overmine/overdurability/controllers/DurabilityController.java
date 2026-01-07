@@ -66,7 +66,6 @@ public class DurabilityController {
 
         int maxDurabilityValue = itemStack.getType().getMaxDurability();
         int durabilityValue = maxDurabilityValue - damageable.getDamage();
-        if (maxDurabilityValue == durabilityValue) return;
 
         String maxDurability = String.valueOf(maxDurabilityValue);
         String durability = String.valueOf(durabilityValue);

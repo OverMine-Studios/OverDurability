@@ -1,5 +1,6 @@
 package studio.overmine.overdurability.listeners;
 
+import org.bukkit.event.player.PlayerItemMendEvent;
 import studio.overmine.overdurability.OverDurability;
 import studio.overmine.overdurability.controllers.DurabilityController;
 import org.bukkit.Bukkit;
@@ -24,6 +25,11 @@ public class DurabilityListener implements Listener {
 
     @EventHandler(ignoreCancelled = true)
     public void onPlayerItemDamage(PlayerItemDamageEvent event) {
+        Bukkit.getScheduler().runTask(plugin, () -> durabilityController.updateDurability(event.getItem()));
+    }
+
+    @EventHandler(ignoreCancelled = true)
+    public void onPlayerItemMending(PlayerItemMendEvent event) {
         Bukkit.getScheduler().runTask(plugin, () -> durabilityController.updateDurability(event.getItem()));
     }
 }
