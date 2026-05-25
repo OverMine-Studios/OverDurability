@@ -4,6 +4,7 @@ durability-message:
     - "&6&lOverDurability Commands"
     - ""
     - " &8● &f/%label% &7apply &8- &eApply durability to an item."
+    - " &8● &f/%label% &7repair &8- &eRepair the item in your hand."
     - " &8● &f/%label% &7reload &8- &eReload the plugin."
     - "&7&m-------------------------"
   error:
@@ -15,3 +16,6 @@ durability-message:
     - "&cDurability placeholders: %od_durability%, %od_max_durability%"
   no-item: "&cYou need to have an item in your hand to use this command."
   applied: "&aDurability placeholder successfully applied to the item."
+  no-money: "&cNo tenés suficiente dinero para reparar este ítem. Costo: $%cost%"
+  already-repaired: "&cEste ítem ya se encuentra completamente reparado."
+  repaired: "&aÍtem reparado exitosamente por $%cost%."

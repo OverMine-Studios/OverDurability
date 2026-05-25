@@ -1,0 +1,6 @@
+# ==========================================
+#         OverDurability - Config
+# ==========================================
+
+# Costo fijo para reparar un ítem usando /overdurability repair
+repair-cost: 100.0
