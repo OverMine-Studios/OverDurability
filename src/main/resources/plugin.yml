@@ -6,5 +6,4 @@ author: Risas, nutellim
 commands:
   overdurability:
     description: OverDurability Command
-    permission: overdurability.command.overdurability
     aliases: [od, odurability]

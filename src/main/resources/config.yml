@@ -2,5 +2,5 @@
 #         OverDurability - Config
 # ==========================================
 
-# Costo fijo para reparar un ítem usando /overdurability repair
+# Cost of /od repair
 repair-cost: 100.0

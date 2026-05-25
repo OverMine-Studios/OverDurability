@@ -38,14 +38,25 @@ public class OverDurabilityCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        String subCommand = args.length > 0 ? args[0].toLowerCase() : "";
+
+        if (!subCommand.equals("repair") && !subCommand.equals("fix")) {
+            if (!sender.hasPermission("overdurability.command.overdurability")) {
+                String noPermissionMsg = languageFile.getString("durability-message.no-permission");
+                if (noPermissionMsg == null) {
+                    noPermissionMsg = "&cYou do not have permission to execute this command.";
+                }
+                ChatUtil.sendMessage(sender, noPermissionMsg);
+                return true;
+            }
+        }
+
         if (args.length == 0) {
             languageFile.getStringList("durability-message.help").forEach(message ->
                     ChatUtil.sendMessage(sender, message
                             .replace("%label%", label)));
             return true;
         }
-
-        String subCommand = args[0].toLowerCase();
 
         switch (subCommand) {
             case "apply" -> {
@@ -84,7 +95,7 @@ public class OverDurabilityCommand implements CommandExecutor, TabCompleter {
 
                 org.bukkit.inventory.meta.ItemMeta meta = itemStack.getItemMeta();
                 if (!(meta instanceof org.bukkit.inventory.meta.Damageable damageable)) {
-                    ChatUtil.sendMessage(player, "&cEste ítem no se puede reparar (no tiene durabilidad).");
+                    ChatUtil.sendMessage(player, "&cThis item cannot be repaired (it does not have durability).");
                     return true;
                 }
 
