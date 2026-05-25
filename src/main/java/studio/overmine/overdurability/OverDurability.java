@@ -1,9 +1,8 @@
 package studio.overmine.overdurability;
 
 import net.milkbowl.vault.economy.Economy;
-import org.bstats.bukkit.Metrics;
-import org.bstats.charts.SimplePie;
 import org.bukkit.plugin.RegisteredServiceProvider;
+import org.bstats.bukkit.Metrics;
 import studio.overmine.overdurability.commands.OverDurabilityCommand;
 import studio.overmine.overdurability.controllers.DurabilityController;
 import studio.overmine.overdurability.listeners.DurabilityListener;
@@ -22,6 +21,10 @@ public class OverDurability extends JavaPlugin {
     public void onEnable() {
         this.configFile = new FileConfig(this, "config.yml");
         this.languageFile = new FileConfig(this, "language.yml");
+
+        // Initialize bStats Metrics
+        int pluginId = 31579;
+        new Metrics(this, pluginId);
 
         if (!setupEconomy()) {
             this.getLogger().warning("Vault/Economy not found! Economy features will be disabled.");
