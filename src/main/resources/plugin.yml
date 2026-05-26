@@ -1,10 +1,9 @@
 name: OverDurability
-version: '1.0.0-SNAPSHOT'
+version: '1.0.2-SNAPSHOT'
 main: studio.overmine.overdurability.OverDurability
 api-version: '1.13'
-author: Risas
+author: Risas, nutellim
 commands:
   overdurability:
     description: OverDurability Command
-    permission: overdurability.command.overdurability
     aliases: [od, odurability]
